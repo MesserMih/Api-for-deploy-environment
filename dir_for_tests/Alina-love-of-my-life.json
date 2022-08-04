@@ -1,0 +1,14 @@
+{
+  "first_name": "Alina",
+  "last_name": "Overina",
+  "employment": [
+    {
+      "organization": "SWOYO",
+      "job title": "Python developer"
+    },
+    {
+      "organization": "Lobach",
+      "job title": "holy martyr"
+    }
+  ]
+}
