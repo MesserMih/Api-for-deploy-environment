@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    container_name: api
+    command: python3 main.py
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    networks:
+      - myNetwork
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:14.4-alpine
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=api-tokens
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - myNetwork
+
+volumes:
+  postgres_data:
+
+networks:
+  myNetwork:
+    driver: bridge
