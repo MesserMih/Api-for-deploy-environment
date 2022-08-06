@@ -7,9 +7,8 @@ pipeline {
     }
     stages {
         stage ("Build") {
-            steps {
-                echo "Hello world"     
-                sh "ls -la"
+            steps { 
+                sh "docker compose up -d"
             }
         }
     }
