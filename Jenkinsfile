@@ -1,13 +1,15 @@
 pipeline {
     agent any
 
+    environment {
+        PROJECT_NAME = "API-Dev"
+        OWNER_NAME = "Oznobikhin Mikhail"
+    }
     stages {
-        stage(Build) {
+        stage ("Build") {
             steps {
-                sh ls -la
-                sh pwd
-                sh whoami
-                echo "Hello world"	
+                echo "Hello world"     
+                sh "ls -la"
             }
         }
     }
